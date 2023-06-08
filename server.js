@@ -4,11 +4,47 @@ const app = express();
 app.set("view engine", "ejs");
 
 app.get("/", function (req, res){
-    res.render("index");
+
+    const items = [
+        {
+          title: "D", 
+           message: "esenvolver aplicações/servirços de forma fácil"
+        },
+
+        {
+            title: "E",
+            message: "js usa JavaScript para renderizar html"
+        },
+
+        {
+            title: "M",
+            message: "uito fácil de usar"
+        },
+
+        {
+            title: "A",
+            message: "gil e veloz"
+        },
+
+        {
+            title: "I",
+            message: "nstall EJS"
+        },
+
+        {
+            title: "S",
+            message: "imples de usar"
+
+        }
+
+    ]
+    res.render("pages/index", {
+        qualitys: items,
+    });
 })
 
 app.get("/sobre", function(req, res){
-    res.render("about");
+    res.render("pages/about");
 })
 
 app.listen(8080);
